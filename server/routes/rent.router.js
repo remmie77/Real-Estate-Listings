@@ -6,7 +6,7 @@ const router = express.Router();
 const pg = require('pg');
 const Pool = pg.Pool;
 const config = {
-    database: 'polaris-shoes', // name of database
+    database: 'real_estate', // name of database
     host: 'localhost',
     port: 5432,
     max: 10, // max number of concurrent connections
@@ -22,3 +22,17 @@ pool.on('connect', () => {
 pool.on('error', (error) => {
     console.log('Error connecting to db', error);
 });
+
+router.get('/', function(req,res){
+    console.log('in rental get route');
+    const query = 'SELECT * FROM "listings" WHERE "type"=rent;';
+    pool.query(query).then((results) => {
+        console.log('results from GET rental listings', results);
+        res.sendStatus(201);
+    }).catch((error) {
+        console.log('error from GET rental listings', error);
+        res.sendStatus(500);
+    })
+})
+
+

@@ -7,7 +7,7 @@ myApp.controller('RentalController', function ($http) {
         console.log('in getRental');
         $http({
             method: 'GET',
-            url: '/rental'
+            url: '/rental' //this has to match with route in 
         }).then(function (response) {
             console.log('RentalController - getRental - response', response.data);
             rc.rental = response.data.results;
@@ -16,5 +16,6 @@ myApp.controller('RentalController', function ($http) {
             console.log('error in getRental', error);
         });
     };
+    rc.getRental();
 });//end getRental 
 

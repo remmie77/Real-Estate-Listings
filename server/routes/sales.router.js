@@ -6,7 +6,7 @@ const router = express.Router();
 const pg = require('pg');
 const Pool = pg.Pool;
 const config = {
-    database: 'polaris-shoes', // name of database
+    database: 'real_estate', // name of database
     host: 'localhost',
     port: 5432,
     max: 10, // max number of concurrent connections

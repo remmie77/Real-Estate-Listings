@@ -1,0 +1,25 @@
+<div>
+    <h1>Here are our rental listings today</h1>
+    Is AngularJS working? {{ 2 === 2 }}
+    <table>
+        <thead>
+            <tr>
+                <th>Monthly Rent</th>
+                <th>Square Footage</th>
+                <th>City</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="house in rc.rental">
+                <td>{{listings.cost}}</td>
+                <td>{{listings.sqft}}</td>
+                <td>{{listings.city}}</td>
+                <td>{{listings.image_path}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- need ng-model for "on load of page" -->

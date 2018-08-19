@@ -1,6 +1,6 @@
 console.log('JS');
 
-let myApp = angular.module('myApp', [ngRoute]);
+let myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config( function ( $routeProvider ) {
     $routeProvider.when('/', {
@@ -14,7 +14,8 @@ myApp.config( function ( $routeProvider ) {
         templateURL: '/views/sales.html',
         controller: 'SalesController as sc'
     })//end sales
-    ///////--------put in ListingController---------////////
 })
+
+
 
 
