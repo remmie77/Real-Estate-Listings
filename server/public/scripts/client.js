@@ -4,7 +4,6 @@ let myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config( function ( $routeProvider ) {
     console.log('in config');
-    
     $routeProvider.when('/', {
         templateURL: 'views/home.html',
         controller: 'HomeController as hc'
@@ -19,8 +18,8 @@ myApp.config( function ( $routeProvider ) {
     })//end sales
     .otherwise({
         redirectTo: '/' 
-    })//end otherwise
-})
+    });//end otherwise
+});
 
 // myApp.controller('HomeController', function ($http) {
 //     console.log('HomeController hit');

@@ -28,11 +28,30 @@ router.get('/', function(req,res) {
     const query = 'SELECT * FROM "listings";';
     pool.query(query).then((results) => {
         console.log('results from GET home listings', results);
-        res.sendStatus(201);
+        res.sendStatus(results.rows);
     }).catch((error) => {
         console.log('error from GET home listings', error);
         res.sendStatus(500);
     })
 })
+
+
+
+
+
+// Express removed the '/shoes' when we do a app.use
+router.post('/', function (req, res) {
+    const shoeToAdd = req.body; // This the data we sent
+    console.log('In POST route - product:', shoeToAdd); // Has a name, size and cost
+    const query = 'INSERT INTO "shoes" ("name", "cost", "size") VALUES ($1, $2, $3);';
+    // $ with index (e.g. $1) will help improve the security of your db
+    // Avoids SQL injection -- see bobby drop table comic
+    pool.query(query, [shoeToAdd.name, shoeToAdd.cost, shoeToAdd.size]).then(() => {
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log('Error in POST', error);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;

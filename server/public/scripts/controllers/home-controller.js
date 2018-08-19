@@ -4,7 +4,7 @@ myApp.controller('HomeController', function ($http) {
     hc.listings = [];
 
     hc.getHomeListings = function () {
-        console.log('in getRental');
+        console.log('in getHomeListings');
         $http({
             method: 'GET',
             url: '/home' //this has to match with route in 

@@ -24,11 +24,11 @@ pool.on('error', (error) => {
 });
 
 router.get('/', function(req,res) {
-    console.log('in rental get route');
+    console.log('in rental GET route');
     const query = 'SELECT * FROM "listings" WHERE "type"=rent;';
     pool.query(query).then((results) => {
         console.log('results from GET rental listings', results);
-        res.sendStatus(201);
+        res.sendStatus(results.rows);
     }).catch((error) => {
         console.log('error from GET rental listings', error);
         res.sendStatus(500);
