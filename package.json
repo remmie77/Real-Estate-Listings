@@ -20,6 +20,7 @@
   "homepage": "https://github.com/remmie77/Real-Estate-Listings#readme",
   "dependencies": {
     "angular": "^1.7.3",
+    "angular-route": "^1.7.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "pg": "^7.4.3"

@@ -22,3 +22,28 @@ pool.on('connect', () => {
 pool.on('error', (error) => {
     console.log('Error connecting to db', error);
 });
+
+router.get('/', function(req,res) {
+    console.log('in rental get route');
+    const query = 'SELECT * FROM "listings" WHERE "type"=sale;';
+    pool.query(query).then((results) => {
+        console.log('results from GET rental listings', results);
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log('error from GET rental listings', error);
+        res.sendStatus(500);
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = router;

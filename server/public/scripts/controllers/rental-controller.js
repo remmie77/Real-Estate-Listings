@@ -11,9 +11,9 @@ myApp.controller('RentalController', function ($http) {
         }).then(function (response) {
             console.log('RentalController - getRental - response', response.data);
             rc.rental = response.data.results;
-            console.log('rc.rental');            
+            console.log('rc.rental', rc.rental);            
         }).catch(function (error) {
-            console.log('error in getRental', error);
+            console.log('error in GET Rental', error);
         });
     };
     rc.getRental();
