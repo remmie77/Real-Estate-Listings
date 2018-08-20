@@ -1,4 +1,14 @@
 <div class="container">
+    <div>
+        <form ng-submit="hc.addHouse(hc.houseToAdd)">
+            COST: <input type="number" ng-model="hc.houseToAdd.cost" placeholder="cost"><br>
+            SIZE: <input type="number" ng-model="hc.houseToAdd.sqft" placeholder="square footage"><br>
+            TYPE: <input type="text" ng-model="hc.houseToAdd.type" placeholder="rent or sell"><br>
+            CITY: <input type="text" ng-model="hc.houseToAdd.city" placeholder="city"><br>
+            IMAGE: <input type="text" ng-model="hc.houseToAdd.image_path" placeholder="image"><br>
+            <input type="submit">
+        </form>    
+    </div>
     <h1>Here are all of our listings today</h1>
     <!-- Is AngularJS working? {{ 2 === 2 }} -->
     <div>
