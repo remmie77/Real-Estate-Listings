@@ -16,7 +16,7 @@ myApp.controller('RentalController', function ($http) {
             console.log('error in GET Rental', error);
         });
     };
-       
+        
     rc.deleteHouse = function (id) {
         console.log(id);
         $http({
