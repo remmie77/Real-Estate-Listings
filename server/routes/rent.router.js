@@ -22,7 +22,7 @@ pool.on('connect', () => {
 pool.on('error', (error) => {
     console.log('Error connecting to db', error);
 });
-
+ 
 router.get('/', function(req,res) {
     console.log('in rental GET route');
     const query = `SELECT * FROM "listings" WHERE "type"='rent';`;
