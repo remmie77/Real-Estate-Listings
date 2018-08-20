@@ -1,22 +1,18 @@
-<div>
+<div class="container">
     <h1>Here are all of our listings today</h1>
-    Is AngularJS working? {{ 2 === 2 }}
-    <table>
-        <thead>
-            <tr>
-                <th>Monthly Rent</th>
-                <th>Square Footage</th>
-                <th>City</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="house in rc.rental">
-                <td>{{listings.cost}}</td>
-                <td>{{listings.sqft}}</td>
-                <td>{{listings.city}}</td>
-                <td>{{listings.image_path}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Is AngularJS working? {{ 2 === 2 }} -->
+    <div>
+        <div ng-repeat="listings in hc.listings">
+            <div class="card mb-3">
+                <img ng-src="images/{{listings.image_path}}" alt="house" class="card-img-top" />
+                <div class="card-body">
+                    <h4 class="card-title">City: {{listings.city}}</h4>
+                    <div class="card-text">Cost: {{listings.cost}}</div>
+                    <div class="card-text">Type: {{listings.type}}</div>
+                    <div class="card-text">Square Footage: {{listings.sqft}}</div>
+                </div>
+                <button ng-click="hc.deleteHouse(listings.id)" class="btn btn-warning">DELETE listing</button>
+            </div>
+        </div>
+    </div>
 </div>

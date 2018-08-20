@@ -28,7 +28,7 @@ router.get('/', function(req,res) {
     const query = 'SELECT * FROM "listings" WHERE "type"=sale;';
     pool.query(query).then((results) => {
         console.log('results from GET rental listings', results);
-        res.sendStatus(results.rows);
+        res.send(results.rows);
     }).catch((error) => {
         console.log('error from GET rental listings', error);
         res.sendStatus(500);
