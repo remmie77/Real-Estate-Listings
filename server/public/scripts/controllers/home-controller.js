@@ -31,9 +31,6 @@ myApp.controller('HomeController', function ($http) {
         });
     };
 
-
-
-
     hc.getHomeListings();
 });//end getRental 
 

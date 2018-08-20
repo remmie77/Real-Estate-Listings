@@ -25,15 +25,28 @@ pool.on('error', (error) => {
 
 router.get('/', function(req,res) {
     console.log('in rental GET route');
-    const query = 'SELECT * FROM "listings" WHERE "type"=rent;';
+    const query = `SELECT * FROM "listings" WHERE "type"='rent';`;
     pool.query(query).then((results) => {
-        console.log('results from GET rental listings', results);
+        //console.log('results from GET rental listings', results);
         res.send(results.rows);
     }).catch((error) => {
         console.log('error from GET rental listings', error);
         res.sendStatus(500);
     })
 })
+
+router.delete('/:id', function (req, res) {
+    console.log('In DELETE route', req.params.id);
+    const houseToDelete = req.params.id;
+    const query = 'DELETE FROM "listings" WHERE "id"=$1 RETURNING *;';
+    pool.query(query, [houseToDelete]).then((results) => {
+        console.log(results.rows);
+        res.sendStatus(201);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = router;
 
