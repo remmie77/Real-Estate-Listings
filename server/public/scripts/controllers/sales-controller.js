@@ -17,6 +17,20 @@ myApp.controller('SalesController', function ($http) {
             console.log('error in GET home', error);
         });
     };
+
+    sc.deleteHouse = function (id) {
+        console.log(id);
+        $http({
+            method: 'DELETE',
+            url: '/sales/' + id
+        }).then(function (response) {
+            console.log(response);
+            sc.getSalesListings()
+        }).catch(function (error) {
+            console.log('SalesController - deleteHouse - error ', error);
+        });
+    };
+
     sc.getSalesListings();
 });//end getRental 
 
