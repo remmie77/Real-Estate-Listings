@@ -33,16 +33,16 @@ myApp.controller('HomeController', function ($http) {
             
     hc.addHouse = function (house) {
         console.log('in addHouse', house);
-        // $http({
-        //     method: 'POST',
-        //     url: '/home',
-        //     data: house
-        // }).then(function(response) {
-        //     console.log('HomeController - addHouse - response', response.data);
-        //     hc.getHomeListings();
-        // }).catch(function(error) {
-        //     console.log('HomeController - addHouse - error ', error);
-        // });
+        $http({
+            method: 'POST',
+            url: '/home',
+            data: house
+        }).then(function(response) {
+            console.log('HomeController - addHouse - response', response.data);
+            hc.getHomeListings();
+        }).catch(function(error) {
+            console.log('HomeController - addHouse - error ', error);
+        });
     }
 
     hc.getHomeListings();
