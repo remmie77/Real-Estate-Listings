@@ -4,13 +4,14 @@ myApp.controller('SalesController', function ($http) {
     sc.sale = [];
 
     sc.getSalesListings = function () {
-        console.log('in getSalesListings');
+        sc.sale = [];
+        console.log('in getsalesListings');
         $http({
             method: 'GET',
             url: '/sales' //this has to match with route in 
         }).then(function (response) {
             console.log('SalesController - GET - response', response.data);
-            sc.sale = response.data.results;
+            sc.sale = response.data;
             console.log('sc.sale', sc.sale);            
         }).catch(function (error) {
             console.log('error in GET home', error);
