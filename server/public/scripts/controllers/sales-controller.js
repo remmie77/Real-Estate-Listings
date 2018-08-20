@@ -18,3 +18,5 @@ myApp.controller('SalesController', function ($http) {
     };
     sc.getSalesListings();
 });//end getRental 
+
+
