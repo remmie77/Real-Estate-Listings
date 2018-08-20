@@ -7,5 +7,31 @@
 }
 
 .inputs {
-    background-color: blanchedalmond;
+    background-color: rgb(213, 255, 205);
+}
+
+.card {
+    background-color: rgb(195, 176, 184);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    box-align: center;
+    padding: 40px;
+    padding-left: 290px;
+}
+
+a {
+    text-align: center;
+    margin: 24px;
+    padding: 20px;
+    color: rgb(64, 165, 224);
+}
+
+nav {
+    height: 40px;
+    padding-top: 8px;
 }

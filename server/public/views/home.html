@@ -2,7 +2,7 @@
     <div class="inputs">
         <h1>List your home here</h1>
         <form ng-submit="hc.addHouse(hc.houseToAdd)" id="houseForm">
-            <div class="mb-3">
+            <div class="card" style="width:500px">
                 <input type="number" ng-model="hc.houseToAdd.cost" placeholder="cost"><br>
                 <input type="number" ng-model="hc.houseToAdd.sqft" placeholder="square footage"><br>
                 <select form="houseForm" ng-model="hc.houseToAdd.type">
