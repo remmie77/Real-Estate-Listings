@@ -40,6 +40,7 @@ myApp.controller('HomeController', function ($http) {
         }).then(function(response) {
             console.log('HomeController - addHouse - response', response.data);
             hc.getHomeListings();
+            hc.houseToAdd = {};
         }).catch(function(error) {
             console.log('HomeController - addHouse - error ', error);
         });
